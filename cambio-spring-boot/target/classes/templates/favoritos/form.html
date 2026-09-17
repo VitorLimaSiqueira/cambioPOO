@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Câmbio - Cadastrar/Editar Favorito</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+
+<header class="topo">
+    <h1>💱 Câmbio</h1>
+    <p th:text="${favorito.id == null} ? 'Novo favorito' : 'Editar favorito'"></p>
+</header>
+
+<main class="conteudo conteudo-simples">
+
+    <section class="cartao">
+        <h2 th:text="${favorito.id == null} ? '★ Cadastrar novo favorito' : '★ Editar favorito'"></h2>
+
+
+        <form th:action="@{/favoritos/salvar}" th:object="${favorito}" method="post" class="form-conversor">
+
+
+            <input type="hidden" th:if="${favorito.id != null}" th:field="*{id}">
+
+            <label for="moedaOrigem">Moeda de origem</label>
+            <select id="moedaOrigem" th:field="*{moedaOrigem}">
+                <option th:each="moeda : ${moedas}" th:value="${moeda}" th:text="${moeda}"></option>
+            </select>
+
+            <label for="moedaDestino">Moeda de destino</label>
+            <select id="moedaDestino" th:field="*{moedaDestino}">
+                <option th:each="moeda : ${moedas}" th:value="${moeda}" th:text="${moeda}"></option>
+            </select>
+
+            <button type="submit" class="botao-primario">Salvar</button>
+        </form>
+
+        <a th:href="@{/favoritos}" class="botao-secundario">← Voltar para a lista</a>
+    </section>
+
+</main>
+
+<footer class="rodape">
+    <p>Trabalho de Programação Orientada a Objetos — Sistema Câmbio</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,406 @@
+/* ==========================================================
+   Sistema Câmbio - estilos gerais
+   Paleta: tons de verde/azul-petróleo
+   ========================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    background-color: #eef2f1;
+    color: #1f2d2b;
+}
+
+/* ---------- Cabeçalho ---------- */
+
+.topo {
+    width: 100%;
+    background-color: #10534a;
+    color: #ffffff;
+    padding: 24px 16px;
+    text-align: center;
+}
+
+.topo h1 {
+    margin: 0 0 4px 0;
+    font-size: 1.9rem;
+}
+
+.topo p {
+    margin: 0;
+    opacity: 0.85;
+    font-size: 0.95rem;
+}
+
+/* ---------- Layout principal ---------- */
+
+.conteudo {
+    width: 100%;
+    max-width: 980px;
+    margin: 32px auto;
+    padding: 0 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+/* Página com apenas um cartão */
+
+.conteudo-simples {
+    width: 100%;
+    max-width: 700px;
+    margin: 32px auto;
+    padding: 0 16px;
+}
+
+/* ---------- Cartões ---------- */
+
+.cartao {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+    margin: 0 auto;
+}
+
+.conversor {
+    flex: 2;
+    min-width: 320px;
+}
+
+.favoritos {
+    flex: 1;
+    min-width: 280px;
+}
+
+/* ---------- Títulos ---------- */
+
+h2 {
+    margin: 0 auto;
+    color: #10534a;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #e3ede9;
+    padding-bottom: 8px;
+    text-align: center;
+}
+
+/* ---------- Formulário do conversor ---------- */
+
+.form-conversor {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 16px auto 0 auto;
+    width: 100%;
+}
+
+.form-conversor label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    display: block;
+    color: #2c3e3c;
+    text-align: center;
+}
+
+.form-conversor input[type="number"],
+.form-conversor select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cdd8d5;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fbfdfc;
+    text-align: center;
+}
+
+/* ---------- Seleção das moedas ---------- */
+
+.linha-selects {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 10px;
+}
+
+.linha-selects > div {
+    flex: 1;
+}
+
+.seta {
+    padding-bottom: 10px;
+    font-size: 1.2rem;
+    color: #10534a;
+    text-align: center;
+}
+
+/* ---------- Botões ---------- */
+
+.botao-primario {
+    background-color: #10534a;
+    color: #ffffff;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.botao-primario:hover {
+    background-color: #0c3f38;
+}
+
+.botao-link {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+}
+
+.botao-secundario {
+    display: block;
+    width: fit-content;
+    margin: 18px auto 0 auto;
+    color: #10534a;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.botao-secundario:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Resultado da conversão ---------- */
+
+.resultado {
+    width: 100%;
+    margin: 22px auto 0 auto;
+    background-color: #e6f4ef;
+    border: 1px solid #bfe3d6;
+    border-radius: 10px;
+    padding: 16px 18px;
+    text-align: center;
+}
+
+.resultado-titulo {
+    margin: 0 0 4px 0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #33685f;
+}
+
+.resultado-valor {
+    margin: 0 0 8px 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0c3f38;
+}
+
+.cotacao-usada {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #45564f;
+}
+
+.erro {
+    width: 100%;
+    margin: 16px auto 0 auto;
+    background-color: #fdeceb;
+    border: 1px solid #f1b8b3;
+    color: #8a2b23;
+    padding: 12px 14px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* ---------- Lista de favoritos ---------- */
+
+.lista-favoritos {
+    list-style: none;
+    width: 100%;
+    margin: 16px auto 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lista-favoritos li {
+    background-color: #f5f9f7;
+    border: 1px solid #e3ede9;
+    border-radius: 8px;
+    padding: 12px 14px;
+    text-align: center;
+}
+
+.par-moedas {
+    margin: 0 0 4px 0;
+    font-weight: 700;
+    color: #10534a;
+}
+
+.cotacao-favorito {
+    margin: 0;
+    font-size: 0.88rem;
+    color: #45564f;
+}
+
+.vazio {
+    color: #7a8b86;
+    font-style: italic;
+    text-align: center;
+}
+
+/* ---------- Cabeçalho da lista ---------- */
+
+.cabecalho-lista {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    text-align: center;
+}
+
+.cabecalho-lista h2 {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* ---------- Tabela de gerenciamento ---------- */
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px auto 0 auto;
+    text-align: center;
+}
+
+.tabela th,
+.tabela td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e3ede9;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.tabela th {
+    background-color: #f5f9f7;
+    color: #10534a;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+/* ---------- Ações ---------- */
+
+.acoes {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.acoes a {
+    margin: 0 6px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.link-editar {
+    color: #1c6e63;
+}
+
+.link-excluir {
+    color: #b73a2e;
+}
+
+.acoes a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Rodapé ---------- */
+
+.rodape {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    color: #6d7b77;
+    font-size: 0.85rem;
+    margin-top: 20px;
+}
+
+/* ---------- Responsividade ---------- */
+
+@media (max-width: 720px) {
+
+    .conteudo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .conteudo-simples {
+        max-width: 100%;
+        margin: 24px auto;
+    }
+
+    .conversor,
+    .favoritos {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .linha-selects {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .linha-selects > div {
+        width: 100%;
+    }
+
+    .seta {
+        padding: 0;
+        text-align: center;
+    }
+
+    .cabecalho-lista {
+        flex-direction: column;
+    }
+
+    .cabecalho-lista h2 {
+        width: 100%;
+    }
+
+    .tabela {
+        font-size: 0.85rem;
+    }
+
+    .tabela th,
+    .tabela td {
+        padding: 8px 5px;
+    }
+
+    .acoes a {
+        display: block;
+        margin: 4px 0;
+    }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Câmbio - Gerenciar Favoritos</title>
+    <link rel="stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+
+<header class="topo">
+    <h1>💱 Câmbio</h1>
+    <p>Gerenciar moedas favoritas</p>
+</header>
+
+<main class="conteudo conteudo-simples">
+
+    <section class="cartao">
+        <div class="cabecalho-lista">
+            <h2>★ Moedas favoritas cadastradas</h2>
+            <a th:href="@{/favoritos/novo}" class="botao-primario botao-link">+ Novo favorito</a>
+        </div>
+
+        <p class="vazio" th:if="${#lists.isEmpty(favoritos)}">
+            Nenhum favorito cadastrado ainda.
+        </p>
+
+        <table class="tabela" th:if="${not #lists.isEmpty(favoritos)}">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Moeda de origem</th>
+                    <th>Moeda de destino</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="favorito : ${favoritos}">
+                    <td th:text="${favorito.id}"></td>
+                    <td th:text="${favorito.moedaOrigem}"></td>
+                    <td th:text="${favorito.moedaDestino}"></td>
+                    <td class="acoes">
+                        <a th:href="@{/favoritos/editar/{id}(id=${favorito.id})}" class="link-editar">Editar</a>
+                        <a th:href="@{/favoritos/excluir/{id}(id=${favorito.id})}" class="link-excluir">Excluir</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a th:href="@{/}" class="botao-secundario">← Voltar para o conversor</a>
+    </section>
+
+</main>
+
+<footer class="rodape">
+    <p>Trabalho de Programação Orientada a Objetos — Sistema Câmbio</p>
+</footer>
+
+</body>
+</html>
